@@ -20,5 +20,9 @@ seaborn version 0.11.2
 
 yellowbrick version 1.5
 
+plotly version 5.13.1
+
+descartes-1.1.0
+
 
 
