@@ -92,3 +92,15 @@ for dataset in [ '2018-19','2019-20','2020-21']:
     fig.update_layout(margin={'r': 0, 't': 0, 'l': 0, 'b': 0},
                       title={'text': '{} School Year'.format(title_1),  'y':0.9, 'x':0.5,'xanchor': 'center','yanchor': 'top' })
     fig.write_image('./images/Chloropeth_{}_InstructionExp.png'.format(title_1))
+    
+    
+    
+    heatmap = sns.heatmap(df.iloc[:,2:].corr(), vmin=-1, vmax=1, annot=True,annot_kws={'size':8}, cmap='viridis')
+    
+    plt.rcParams['figure.figsize']=(20,20)
+    heatmap.set_title('Correlation {}'.format(title_1), fontdict={'fontsize':18}, pad=12)
+    hm=heatmap.get_figure()
+    hm.savefig('./images/heatmap_{}.png'.format(title_1), dpi=300, bbox_inches='tight')
+    hm.clear()
+    
+    
