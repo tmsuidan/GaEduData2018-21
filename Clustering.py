@@ -10,16 +10,14 @@ Created on Tue Oct 15 09:13:30 2019
 import numpy as np
 import pandas as pd
 from sklearn.metrics import silhouette_score
-from sklearn.model_selection import train_test_split
+
 
 
 from sklearn.mixture import GaussianMixture
 from sklearn.cluster import KMeans
 from yellowbrick.cluster import KElbowVisualizer
 from yellowbrick.cluster import InterclusterDistance
-from sklearn.metrics import adjusted_mutual_info_score as adjmi
-from scipy.spatial.distance import jensenshannon as js
-from sklearn.decomposition import PCA
+
 
 
 import matplotlib.pyplot as plt
@@ -46,12 +44,12 @@ for dataset in [ '2018-19','2019-20','2020-21']:
         np.random.seed(123)
         if dataset=='2018-19':
             
-            data = pd.read_csv('./data/Master_18-19.csv')
-            data.replace('TFS',0,inplace=True)
-            data.replace(np.nan,0,inplace=True)
-            data=data.iloc[:,2:]
+            df = pd.read_csv('./data/Master_18-19.csv')
+            df.replace('TFS',0,inplace=True)
+            df.replace(np.nan,0,inplace=True)
+            df=df.iloc[:,2:]
            
-            features=data.values
+            features=df.values
             title_1='2018-19'
             
             
@@ -69,23 +67,23 @@ for dataset in [ '2018-19','2019-20','2020-21']:
             
         if dataset=='2019-20':
             
-            data = pd.read_csv('./data/Master_19-20.csv')
-            data.replace('TFS',0,inplace=True)
-            data.replace(np.nan,0,inplace=True)
-            data=data.iloc[:,2:]
+            df = pd.read_csv('./data/Master_19-20.csv')
+            df.replace('TFS',0,inplace=True)
+            df.replace(np.nan,0,inplace=True)
+            df=df.iloc[:,2:]
            
-            features=data.values
+            features=df.values
             title_1='2019-20' 
             
             
         if dataset=='2020-21':
              
-             data = pd.read_csv('./data/Master_20-21.csv')
-             data.replace('TFS',0,inplace=True)
-             data.replace(np.nan,0,inplace=True)
-             data=data.iloc[:,2:]
+             df = pd.read_csv('./data/Master_20-21.csv')
+             df.replace('TFS',0,inplace=True)
+             df.replace(np.nan,0,inplace=True)
+             df=df.iloc[:,2:]
             
-             features=data.values
+             features=df.values
              title_1='2020-21'
              
         
@@ -104,8 +102,8 @@ for dataset in [ '2018-19','2019-20','2020-21']:
         clusters=[]
         
 
-        for i in range(2, features.shape[0]):
-            start=perf_counter()
+        for i in range(2, features.shape[1]/2):
+            
             
             km = KMeans(
                 n_clusters=i, init='k-means++',
@@ -146,7 +144,7 @@ for dataset in [ '2018-19','2019-20','2020-21']:
                             'Silhouette Score': silhouette_scores, \
                             
                             })   
-        labelsdf=pd.DataFrame(data=np.NAN, index=range(data.shape[0]),columns=range(2, features.shape[1]+1))
+        labelsdf=pd.DataFrame(np.NAN, index=range(features.shape[0]),columns=range(2, features.shape[1]+1))
         for j in range(len(clusters)):
             labelsdf.iloc[:,j]=clusters[j]
         
@@ -159,7 +157,7 @@ for dataset in [ '2018-19','2019-20','2020-21']:
         model=KMeans(init='k-means++',
                         n_init=50, max_iter=300,
                         tol=1e-04, random_state=123, algorithm='auto')
-        visualizer = KElbowVisualizer(model, metric='silhouette', k=np.arange(2,features.shape[1]+1), locate_elbow=False)
+        visualizer = KElbowVisualizer(model, metric='silhouette', k=np.arange(2,features.shape[1]/2), locate_elbow=False)
         visualizer.fit(features)    
         visualizer.poof(outpath='./images/{}_km_yb_sil.png'.format(title_1)) 
         
@@ -235,7 +233,7 @@ for dataset in [ '2018-19','2019-20','2020-21']:
                     train_prior=em.predict_proba(features)
                     pd.DataFrame(train_prior).to_csv('./csvs/em/{}_train_prior_{}_{}_{}.csv'.format(title_1, cv_type, ip, n_components ))
                    
-                labelsdf=pd.DataFrame(data=np.NAN, index=range(len(train_labels)),columns=range(2, features.shape[1]+1))
+                labelsdf=pd.DataFrame(np.nan, index=range(len(train_labels)),columns=range(2, features.shape[1]+1))
                 for i in range(len(labels_list)):
                     labelsdf.iloc[:,i]=labels_list[i]
                 
