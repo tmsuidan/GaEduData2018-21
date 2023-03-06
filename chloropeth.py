@@ -62,7 +62,7 @@ for dataset in [ '2018-19','2019-20','2020-21']:
 
     fig = px.choropleth(df, geojson=counties, locations='FIPS', color='Labels',
                         color_continuous_scale='Viridis',
-                        range_color=(0, 14),
+                        range_color=(0, 10),
                         scope='usa',
                         labels={'Labels': 'Overall'}
                         )
@@ -73,7 +73,7 @@ for dataset in [ '2018-19','2019-20','2020-21']:
     
     fig = px.choropleth(df, geojson=counties, locations='FIPS', color='{} SAT DSTRCT_AVG_SCORE_VAL'.format(title_1),
                         color_continuous_scale='Viridis',
-                        range_color=(0, 14),
+                        range_color=(0, 30),
                         scope='usa',
                         labels={'Labels': 'SAT Combined Score'}
                         )
@@ -84,7 +84,7 @@ for dataset in [ '2018-19','2019-20','2020-21']:
     
     fig = px.choropleth(df, geojson=counties, locations='FIPS', color='{}_Instruction_y'.format(title_1),
                         color_continuous_scale='Viridis',
-                        range_color=(0, 14),
+                        range_color=(0, 30),
                         scope='usa',
                         labels={'Labels': 'Instruction Expenditures'}
                         )

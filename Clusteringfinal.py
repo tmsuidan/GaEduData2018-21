@@ -9,18 +9,13 @@ Created on Tue Oct 15 09:13:30 2019
 
 import numpy as np
 import pandas as pd
-from sklearn.metrics import silhouette_score
+
 
 
 
 #from sklearn.mixture import GaussianMixture
 from sklearn.cluster import KMeans
-from yellowbrick.cluster import KElbowVisualizer
-from yellowbrick.cluster import InterclusterDistance
 
-
-
-import matplotlib.pyplot as plt
 
 
 
@@ -50,7 +45,7 @@ for dataset in [ '2018-19','2019-20','2020-21']:
        
         features=df.values
         title_1='2018-19'
-        n_clust=8
+        n_clust=10
         
         
         
@@ -74,7 +69,7 @@ for dataset in [ '2018-19','2019-20','2020-21']:
        
         features=df.values
         title_1='2019-20' 
-        n_clust=5
+        n_clust=10
         
         
     if dataset=='2020-21':
@@ -86,7 +81,7 @@ for dataset in [ '2018-19','2019-20','2020-21']:
         
          features=df.values
          title_1='2020-21'
-         n_clust=14
+         n_clust=10
          
     
          
