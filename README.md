@@ -2,7 +2,7 @@
  
 Data downloaded from https://gosa.georgia.gov/dashboards-data-report-card/downloadable-data and aggregated/organized with python
 
-json downloaded from https://github.com/deldersveld/topojson/blob/master/countries/us-states/GA-13-georgia-counties.json
+
 
 Requirements
 
