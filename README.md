@@ -10,8 +10,10 @@ pandas version 1.3.4
 
 numpy version 1.20.3
 
-sckikit-learn version 0.24.2
+sckikit-learn version 1.2.1
 
 matplotlib version 3.4.3
 
 seaborn version 0.11.2
+
+yellowbrick version 1.5
