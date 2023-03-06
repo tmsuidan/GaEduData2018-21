@@ -2,6 +2,8 @@
  
 Data downloaded from https://gosa.georgia.gov/dashboards-data-report-card/downloadable-data and aggregated/organized with python
 
+json downloaded from https://github.com/deldersveld/topojson/blob/master/countries/us-states/GA-13-georgia-counties.json
+
 Requirements
 
 python version 3.9.7
@@ -17,3 +19,6 @@ matplotlib version 3.4.3
 seaborn version 0.11.2
 
 yellowbrick version 1.5
+
+
+
