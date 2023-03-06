@@ -24,5 +24,9 @@ plotly version 5.13.1
 
 descartes-1.1.0
 
+python-kaleido version 0.2.1
+
+geopandas version 0.12.2
+
 
 
