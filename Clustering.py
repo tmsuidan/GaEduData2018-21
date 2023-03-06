@@ -13,7 +13,7 @@ from sklearn.metrics import silhouette_score
 
 
 
-from sklearn.mixture import GaussianMixture
+#from sklearn.mixture import GaussianMixture
 from sklearn.cluster import KMeans
 from yellowbrick.cluster import KElbowVisualizer
 from yellowbrick.cluster import InterclusterDistance
@@ -21,20 +21,20 @@ from yellowbrick.cluster import InterclusterDistance
 
 
 import matplotlib.pyplot as plt
-from time import perf_counter
+
 
 
 import os
 directory="./images/km"
 if not os.path.exists(directory):
     os.makedirs(directory)
-    directory="./images/em"
-if not os.path.exists(directory):
-    os.makedirs(directory)
+# directory="./images/em"
+# if not os.path.exists(directory):
+#     os.makedirs(directory)
 
-directory="./csvs/em"
-if not os.path.exists(directory):
-    os.makedirs(directory)
+# directory="./csvs/em"
+# if not os.path.exists(directory):
+#     os.makedirs(directory)
 directory="./csvs/kmeans"
 if not os.path.exists(directory):
     os.makedirs(directory)
@@ -102,7 +102,7 @@ for dataset in [ '2018-19','2019-20','2020-21']:
         clusters=[]
         
 
-        for i in range(2, features.shape[1]/2):
+        for i in range(2, 20):
             
             
             km = KMeans(
@@ -157,98 +157,85 @@ for dataset in [ '2018-19','2019-20','2020-21']:
         model=KMeans(init='k-means++',
                         n_init=50, max_iter=300,
                         tol=1e-04, random_state=123, algorithm='auto')
-        visualizer = KElbowVisualizer(model, metric='silhouette', k=np.arange(2,features.shape[1]/2), locate_elbow=False)
+        visualizer = KElbowVisualizer(model, metric='silhouette', k=np.arange(2,20), timings=False,locate_elbow=False)
         visualizer.fit(features)    
         visualizer.poof(outpath='./images/{}_km_yb_sil.png'.format(title_1)) 
         
-        plt.close()
-        model=KMeans(random_state=123)
-        visualizer = KElbowVisualizer(model,  k=np.arange(2,features.shape[1]), locate_elbow=False)
-        visualizer.fit(features)    
-        visualizer.poof(outpath='./images/{}_km_yb_dist.png'.format(title_1)) 
         
-        plt.close()
-        model=KMeans(random_state=123)
-        visualizer = KElbowVisualizer(model, metric='calinski_harabasz', k=np.arange(2,features.shape[1]), locate_elbow=False)
-        visualizer.fit(features)    
-        visualizer.poof(outpath='./images/{}_km_yb_ch.png'.format(title_1)) 
-        plt.close()
-        
-            
         
         #adapted from https://scikit-learn.org/stable/auto_examples/mixture/plot_gmm_selection.html#sphx-glr-auto-examples-mixture-plot-gmm-selection-py
-        lowest_bic = np.infty
-        bic_list= []
+        # lowest_bic = np.infty
+        # bic_list= []
         
-        comp_list=[]
-        cv_list=[]
+        # comp_list=[]
+        # cv_list=[]
         
         
-        weights=[]
-        means=[] 
-        aic_list=[]
+        # weights=[]
+        # means=[] 
+        # aic_list=[]
         
-        init_paramsl=[]
-        iter_list=[]
-        loglower=[]
-        labels_list=[]
+        # init_paramsl=[]
+        # iter_list=[]
+        # loglower=[]
+        # labels_list=[]
         
-        n_components_range = range(2,features.shape[1]+1)
-        cv_types = [ 'diag', 'full']
-        for cv_type in cv_types:
-            for ip in ['kmeans','random']:
-                labels_list=[]
+        # n_components_range = range(2,features.shape[1]+1)
+        # cv_types = [ 'diag', 'full']
+        # for cv_type in cv_types:
+        #     for ip in ['kmeans','random']:
+        #         labels_list=[]
                 
-                for n_components in n_components_range:
+        #         for n_components in n_components_range:
                     
                 
-                # Fit a Gaussian mixture with EM
+        #         # Fit a Gaussian mixture with EM
                     
-                    em = GaussianMixture(n_components=n_components, max_iter=300, \
-                                          n_init=30, covariance_type=cv_type, \
-                                          random_state=123, warm_start=True, init_params=ip)
-                    em.fit(features)
+        #             em = GaussianMixture(n_components=n_components, max_iter=300, \
+        #                                   n_init=30, covariance_type=cv_type, \
+        #                                   random_state=123, warm_start=True, init_params=ip)
+        #             em.fit(features)
                     
-                    bic_list.append(em.bic(features))
+        #             bic_list.append(em.bic(features))
                     
-                    aic_list.append(em.aic(features))
+        #             aic_list.append(em.aic(features))
                    
-                    comp_list.append(n_components)
-                    cv_list.append(cv_type)
-                    init_paramsl.append(ip)
+        #             comp_list.append(n_components)
+        #             cv_list.append(cv_type)
+        #             init_paramsl.append(ip)
                    
-                    weights.append(em.weights_)
-                    means.append(em.means_)
-                    iter_list.append(em.n_iter_)
-                    loglower.append(em.lower_bound_)
-                    train_labels=em.fit_predict(features)
-                    labels_list.append(train_labels)
-                    pd.DataFrame(train_labels).to_csv('./csvs/em/{}_train_labels_{}_{}_{}.csv'.format(title_1, cv_type, ip, n_components ))
+        #             weights.append(em.weights_)
+        #             means.append(em.means_)
+        #             iter_list.append(em.n_iter_)
+        #             loglower.append(em.lower_bound_)
+        #             train_labels=em.fit_predict(features)
+        #             labels_list.append(train_labels)
+        #             pd.DataFrame(train_labels).to_csv('./csvs/em/{}_train_labels_{}_{}_{}.csv'.format(title_1, cv_type, ip, n_components ))
                     
                     
                     
-                    train_probs=em.score_samples(features)
-                    pd.DataFrame(train_probs).to_csv('./csvs/em/{}_train_probs_{}_{}_{}.csv'.format(title_1,  cv_type, ip, n_components ))
+        #             train_probs=em.score_samples(features)
+        #             pd.DataFrame(train_probs).to_csv('./csvs/em/{}_train_probs_{}_{}_{}.csv'.format(title_1,  cv_type, ip, n_components ))
                     
-                    train_prior=em.predict_proba(features)
-                    pd.DataFrame(train_prior).to_csv('./csvs/em/{}_train_prior_{}_{}_{}.csv'.format(title_1, cv_type, ip, n_components ))
+        #             train_prior=em.predict_proba(features)
+        #             pd.DataFrame(train_prior).to_csv('./csvs/em/{}_train_prior_{}_{}_{}.csv'.format(title_1, cv_type, ip, n_components ))
                    
-                labelsdf=pd.DataFrame(np.nan, index=range(len(train_labels)),columns=range(2, features.shape[1]+1))
-                for i in range(len(labels_list)):
-                    labelsdf.iloc[:,i]=labels_list[i]
+        #         labelsdf=pd.DataFrame(np.nan, index=range(len(train_labels)),columns=range(2, features.shape[1]+1))
+        #         for i in range(len(labels_list)):
+        #             labelsdf.iloc[:,i]=labels_list[i]
                 
-                labelsdf.to_csv('./csvs/{}_em_clusterslabels_train_{}_{}.csv'.format(title_1, cv_type, ip))
+        #         labelsdf.to_csv('./csvs/{}_em_clusterslabels_train_{}_{}.csv'.format(title_1, cv_type, ip))
                
-        df=pd.DataFrame({'CV Type':cv_list,'init param':init_paramsl,\
-                          'Number of Components':comp_list,\
-                          'Train BIC':bic_list, \
-                          'AIC Train':aic_list, \
-                           \
-                          'Number of Iterations':iter_list, \
-                          'Log Likelihood': loglower})
-        df.to_csv('./csvs/{}_em_bic.csv'.format(title_1))
+        # df=pd.DataFrame({'CV Type':cv_list,'init param':init_paramsl,\
+        #                   'Number of Components':comp_list,\
+        #                   'Train BIC':bic_list, \
+        #                   'AIC Train':aic_list, \
+        #                    \
+        #                   'Number of Iterations':iter_list, \
+        #                   'Log Likelihood': loglower})
+        # df.to_csv('./csvs/{}_em_bic.csv'.format(title_1))
        
         
-        wts=pd.DataFrame(weights).to_csv('./csvs/{}_em_weights.csv'.format(title_1))
-        meansdf=pd.DataFrame(means).to_csv('./csvs/{}_em_means.csv'.format(title_1))
+        # wts=pd.DataFrame(weights).to_csv('./csvs/{}_em_weights.csv'.format(title_1))
+        # meansdf=pd.DataFrame(means).to_csv('./csvs/{}_em_means.csv'.format(title_1))
         
