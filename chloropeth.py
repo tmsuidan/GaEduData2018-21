@@ -15,9 +15,7 @@ import requests
 import seaborn as sns
 
 
-# ga_json='./data/5m-US-counties.json'
-# with open(ga_json,'r') as f:
-#     data=json.load(f.text)
+
     
 r = requests.get(
     'https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json'
