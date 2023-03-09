@@ -38,50 +38,39 @@ for dataset in [ '2018-19','2019-20','2020-21']:
     np.random.seed(123)
     if dataset=='2018-19':
         
-        df = pd.read_csv('./data/Master_18-19.csv')
+        df = pd.read_csv('./data/Master_2018-19.csv')
         df.replace('TFS',0,inplace=True)
         df.replace(np.nan,0,inplace=True)
         df=df.iloc[:,2:]
        
         features=df.values
         title_1='2018-19'
-        n_clust=10
+        n_clust=17
         
-        
-        
-        
-        
-        
-        
-        
-        
-        #https://towardsdatascience.com/k-means-clustering-with-scikit-learn-6b47a369a83c
-        
-        # Normalize feature
-       
+      
         
     if dataset=='2019-20':
         
-        df = pd.read_csv('./data/Master_19-20.csv')
+        df = pd.read_csv('./data/Master_2019-20.csv')
         df.replace('TFS',0,inplace=True)
         df.replace(np.nan,0,inplace=True)
         df=df.iloc[:,2:]
        
         features=df.values
         title_1='2019-20' 
-        n_clust=10
+        n_clust=17
         
         
     if dataset=='2020-21':
          
-         df = pd.read_csv('./data/Master_20-21.csv')
+         df = pd.read_csv('./data/Master_2020-21.csv')
          df.replace('TFS',0,inplace=True)
          df.replace(np.nan,0,inplace=True)
          df=df.iloc[:,2:]
         
          features=df.values
          title_1='2020-21'
-         n_clust=10
+         n_clust=17
          
     
          
@@ -105,7 +94,7 @@ for dataset in [ '2018-19','2019-20','2020-21']:
     
     if dataset=='2018-19':
         
-        df = pd.read_csv('./data/Master_18-19.csv')
+        df = pd.read_csv('./data/Master_2018-19.csv')
         
         df.replace('TFS',0,inplace=True)
         df.replace(np.nan,0,inplace=True)
@@ -130,7 +119,7 @@ for dataset in [ '2018-19','2019-20','2020-21']:
         
     if dataset=='2019-20':
         
-        df = pd.read_csv('./data/Master_19-20.csv')
+        df = pd.read_csv('./data/Master_2019-20.csv')
         df.replace('TFS',0,inplace=True)
         df.replace(np.nan,0,inplace=True)
         
@@ -143,7 +132,7 @@ for dataset in [ '2018-19','2019-20','2020-21']:
         
     if dataset=='2020-21':
          
-          df = pd.read_csv('./data/Master_20-21.csv')
+          df = pd.read_csv('./data/Master_2020-21.csv')
           df.replace('TFS',0,inplace=True)
           df.replace(np.nan,0,inplace=True)
           
