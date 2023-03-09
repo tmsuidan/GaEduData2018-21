@@ -72,7 +72,7 @@ for dataset in [ '2018-19','2019-20','2020-21']:
     
     fig = px.choropleth(df, geojson=counties, locations='FIPS', color='SAT Combined Score',
                         color_continuous_scale='Viridis',
-                        range_color=(0, 30),
+                        range_color=(700, 1600),
                         scope='usa',
                         labels={'Labels': 'SAT Combined Score'}
                         )
