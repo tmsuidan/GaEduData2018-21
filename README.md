@@ -2,6 +2,8 @@
  
 Data downloaded from https://gosa.georgia.gov/dashboards-data-report-card/downloadable-data and aggregated/organized with python
 
+json for Georgia cities downloaded from https://github.com/deldersveld/topojson
+
 
 
 Requirements
