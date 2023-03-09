@@ -53,11 +53,12 @@ for dataset in [ '2018-19','2019-20','2020-21']:
     df['SCHOOL_DSTRCT_NM']=df['SCHOOL_DSTRCT_NM'].replace({' County':''},regex=True)
     df['SCHOOL_DSTRCT_NM']=df['SCHOOL_DSTRCT_NM'].replace({' Public Schools':''},regex=True)
     df['FIPS']=df.SCHOOL_DSTRCT_NM.map(map_dict)
+    df.to_csv('./csvs/Master {} with Labels FIPS.csv'.format(title_1),index=False)
     df=df.iloc[:-1,:]
 
 
 
-
+    
 
     fig = px.choropleth(df, geojson=counties, locations='FIPS', color='Labels',
                         color_continuous_scale='Viridis',
@@ -101,5 +102,6 @@ for dataset in [ '2018-19','2019-20','2020-21']:
     hm=heatmap.get_figure()
     hm.savefig('./images/heatmap_{}.png'.format(title_1), dpi=300, bbox_inches='tight')
     hm.clear()
+    
     
     
