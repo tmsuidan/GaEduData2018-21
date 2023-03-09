@@ -21,11 +21,11 @@ r = requests.get(
     'https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json'
     )
 counties = json.loads(r.text)
-target_states = ["13"]
-al = [i for i in counties["features"] if i["properties"]["STATE"] in target_states]
-df2=pd.json_normalize(al, max_level=1)
-df2=df2.set_index('properties.NAME')
-df2=df2['id']
+# target_states = ["13"]
+# al = [i for i in counties["features"] if i["properties"]["STATE"] in target_states]
+# df2=pd.json_normalize(al, max_level=1)
+# df2=df2.set_index('properties.NAME')
+# df2=df2['id']
 
 
 for dataset in [ '2018-19','2019-20','2020-21']:
@@ -47,13 +47,13 @@ for dataset in [ '2018-19','2019-20','2020-21']:
           
             
 
-    map_dict=dict(df2)
+    #map_dict=dict(df2)
     
-    df = pd.read_csv('./csvs/{}_with labels.csv'.format(title_1))
-    df['SCHOOL_DSTRCT_NM']=df['SCHOOL_DSTRCT_NM'].replace({' County':''},regex=True)
-    df['SCHOOL_DSTRCT_NM']=df['SCHOOL_DSTRCT_NM'].replace({' Public Schools':''},regex=True)
-    df['FIPS']=df.SCHOOL_DSTRCT_NM.map(map_dict)
-    df.to_csv('./csvs/Master {} with Labels FIPS.csv'.format(title_1),index=False)
+    df = pd.read_csv('./csvs/Master {} with Labels FIPS.csv'.format(title_1))
+    # df['SCHOOL_DSTRCT_NM']=df['SCHOOL_DSTRCT_NM'].replace({' County':''},regex=True)
+    # df['SCHOOL_DSTRCT_NM']=df['SCHOOL_DSTRCT_NM'].replace({' Public Schools':''},regex=True)
+    # df['FIPS']=df.SCHOOL_DSTRCT_NM.map(map_dict)
+    # df.to_csv('./csvs/Master {} with Labels FIPS.csv'.format(title_1),index=False)
     df=df.iloc[:-1,:]
 
 
