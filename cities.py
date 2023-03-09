@@ -37,31 +37,29 @@ for dataset in [ '2018-19','2019-20','2020-21']:
     
     fig = go.Figure()
     
+    fig = px.scatter_mapbox(df, lat='Latitude', lon='Longitude', 
+                        color="Labels",
+                        size="STUDENT_COUNT_ALL_Attendance", color_continuous_scale=px.colors.sequential.Viridis, size_max=40,
+                        zoom=5, height=1000, mapbox_style="open-street-map")
+    fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
     
     
-    
-    fig.add_trace(go.Scattergeo(
-        #locationmode = df['SCHOOL_DSTRCT_NM'] ,
-        lon = df['Longitude'],
-        lat = df['Latitude'],
-        text = df['SCHOOL_DSTRCT_NM'],
-        marker = dict(
-            size = df['STUDENT_COUNT_ALL_Attendance']/100,
-            color = 'paleturquoise',
-            line_color='rgb(40,40,40)',
-            line_width=0.5,
-            sizemode = 'area',
-            ),
-        name = 'test'))
-
-    fig.update_layout(
-            title_text = '2014 US city populations<br>(Click legend to toggle traces)',
-            showlegend = True,
-            geo = dict(
-                scope = 'usa',
-                landcolor = 'rgb(217, 217, 217)',
-            )
-        )
+  
     fig.update_geos(fitbounds="locations")
     
-    fig.write_image('./images/Cities_{}.png'.format(title_1))
+    fig.write_image('./images/Cities_Labels_{}.png'.format(title_1))
+    
+    fig = go.Figure()
+    
+    fig = px.scatter_mapbox(df, lat='Latitude', lon='Longitude', 
+                        color="SAT Combined Score",
+                        size="STUDENT_COUNT_ALL_Attendance", color_continuous_scale=px.colors.sequential.Viridis, size_max=40,
+                        zoom=5, height=1000, mapbox_style="open-street-map")
+    fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
+    
+    
+  
+    fig.update_geos(fitbounds="locations")
+    
+    fig.write_image('./images/Cities_SAT_{}.png'.format(title_1))
+    
