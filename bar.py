@@ -6,6 +6,7 @@ Created on Tue Mar 14 10:11:52 2023
 """
 import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 import numpy as np
 
@@ -29,14 +30,24 @@ df2020=df2020.iloc[0:180,:]
 
 
 for i in plot_types:
-    df=pd.DataFrame({'2018-19':df2018[i+'_2018-19'],\
+    df=pd.DataFrame({'District':df2018.index,\
+                     '2018-19':df2018[i+'_2018-19'],\
                      '2019-20':df2019[i+'_2019-20'],\
                      '2020-21':df2020[i+'_2020-21']},\
-                    index=df2018.index)
-    width=0.15
-    
-    
+                    )
         
+    test_df=df.melt(id_vars='District')
+    
+    p1=sns.FacetGrid(data=test_df, col='District', col_wrap=15,  hue='variable').set_titles( fontsize=18)
+    p1.map(sns.barplot, 'variable', 'value', order=test_df['variable'].unique()).add_legend()#, hue='variable')
+    plt.rcParams['figure.figsize']=(30,24)
+    p1.fig.subplots_adjust(top=0.9)
+    p1.fig.suptitle('{}'.format(i), fontsize=20)
+    
+    p1.savefig('./images/bar/bar_{}.png'.format(i), dpi=300, bbox_inches='tight')
+    p1.fig.clf()
+    
+    width=0.15    
     df1=df.iloc[0:30,:]
     df1.name='1st30'
     df2=df.iloc[30:61,:]
