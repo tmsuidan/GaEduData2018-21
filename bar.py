@@ -28,15 +28,18 @@ for i in plot_types:
                      '2019-20':df2019[i+'_2019-20'],\
                      '2020-21':df2020[i+'_2020-21']},\
                     index=df2018.index)
-    width=0.3
+    width=0.1
     
     
+        
     df1=df.iloc[0:60,:]
     df1.name='1st60'
     df2=df.iloc[61:121,:]
     df2.name='2nd60'
     df3=df.iloc[122:,:]
     df3.name='3rd60'
+   
+    
     
     for k in [df1,df2,df3]:
         k_str=k.name
