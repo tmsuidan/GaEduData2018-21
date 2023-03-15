@@ -1,6 +1,6 @@
 # GaEduData2018-21
  
-Data downloaded from https://gosa.georgia.gov/dashboards-data-report-card/downloadable-data and aggregated/organized with python. Missing data was filled in with the category mean or with zeros as appropriate.
+Data downloaded from https://gosa.georgia.gov/dashboards-data-report-card/downloadable-data and aggregated/organized with python. Missing data was filled in with the category mean or with zeros as appropriate. Revenue and expenditures data was normalized by the district student count.
 
 json for Georgia cities downloaded from https://github.com/deldersveld/topojson
 
