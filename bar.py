@@ -44,7 +44,7 @@ for i in plot_types:
     for ax in p1.axes:
         for p in ax.patches:
                  ax.annotate("%.2f" % p.get_height(), (p.get_x() + p.get_width() / 2., p.get_height()),
-                     ha='center', va='center', fontsize=11, color='black', xytext=(0, 3),
+                     ha='center', va='bottom', fontsize=11, color='black', xytext=(0, 3),
                      textcoords='offset points', rotation=90)
     plt.rcParams['figure.figsize']=(30,24)
     p1.fig.subplots_adjust(top=0.9)
