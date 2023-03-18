@@ -63,67 +63,67 @@ for i in plot_types:
     p1.fig.clf()
     
     
-    # width=0.15    
-    # df1=df.iloc[0:30,:]
-    # df1.name='1st30'
-    # df2=df.iloc[30:61,:]
-    # df2.name='2nd30'
-    # df3=df.iloc[61:91,:]
-    # df3.name='3rd30'
-    # df4=df.iloc[91:121,:]
-    # df4.name='4th30'
-    # df5=df.iloc[121:151,:]
-    # df5.name='5th30'
-    # df6=df.iloc[151:,:]
-    # df6.name='6th30'
+    width=0.15    
+    df1=df.iloc[0:30,:]
+    df1.name='1st30'
+    df2=df.iloc[30:61,:]
+    df2.name='2nd30'
+    df3=df.iloc[61:91,:]
+    df3.name='3rd30'
+    df4=df.iloc[91:121,:]
+    df4.name='4th30'
+    df5=df.iloc[121:151,:]
+    df5.name='5th30'
+    df6=df.iloc[151:,:]
+    df6.name='6th30'
    
     
     
-    # for k in [df1,df2,df3,df4,df5,df6]:
-    #     k_str=k.name
-    #     labels=list(k.index)
-    #     x=np.arange(len(labels))
-    #     fig,ax=plt.subplots(figsize=(25,15))
+    for k in [df1,df2,df3,df4,df5,df6]:
+        k_str=k.name
+        labels=list(k.index)
+        x=np.arange(len(labels))
+        fig,ax=plt.subplots(figsize=(25,15))
         
         
-    #     rects1=ax.bar(x-0.2,k.iloc[:,0],width,label='2018-19', color='blue')
-    #     for p in rects1:
-    #        height = p.get_height()
-    #        ax.annotate('{}'.format(height),
-    #           xy=(p.get_x() + p.get_width() / 2, height),
-    #           xytext=(0, 3), # 3 points vertical offset
-    #           textcoords="offset points",
-    #           ha='center', va='bottom', rotation=90)
-    #        #ax.set_yticklabels(np.arange(y_min,y_max,(y_max-y_min)/10 ))
-    #     rects2=ax.bar(x,k.iloc[:,1],width,label='2019-20', color='turquoise')
-    #     for p in rects2:
-    #        height = p.get_height()
-    #        ax.annotate('{}'.format(height),
-    #           xy=(p.get_x() + p.get_width() / 2, height),
-    #           xytext=(0, 3), # 3 points vertical offset
-    #           textcoords="offset points",
-    #           ha='center', va='bottom', rotation=90)
-    #        #ax.set_yticklabels(np.arange(y_min,y_max,(y_max-y_min)/10 ))
-    #     rects3=ax.bar(x+0.2,k.iloc[:,2],width,label='2020-21', color='red')
-    #     for p in rects3:
-    #        height = p.get_height()
-    #        ax.annotate('{}'.format(height),
-    #           xy=(p.get_x() + p.get_width() / 2, height),
-    #           xytext=(0, 3), # 3 points vertical offset
-    #           textcoords="offset points",
-    #           ha='center', va='bottom', rotation=90)
-    #        #ax.set_yticklabels(np.arange(y_min,y_max,(y_max-y_min)/10 ))
-    #     ax.legend(fontsize=16)
-    #     ax.set_title(i, fontsize=20)
-    #     ax.tick_params(labelsize=20)
+        rects1=ax.bar(x-0.2,k.iloc[:,0],width,label='2018-19', color='blue')
+        for p in rects1:
+            height = p.get_height()
+            ax.annotate('{}'.format(height),
+              xy=(p.get_x() + p.get_width() / 2, height),
+              xytext=(0, 3), # 3 points vertical offset
+              textcoords="offset points",
+              ha='center', va='bottom', rotation=90)
+            #ax.set_yticklabels(np.arange(y_min,y_max,(y_max-y_min)/10 ))
+        rects2=ax.bar(x,k.iloc[:,1],width,label='2019-20', color='turquoise')
+        for p in rects2:
+            height = p.get_height()
+            ax.annotate('{}'.format(height),
+              xy=(p.get_x() + p.get_width() / 2, height),
+              xytext=(0, 3), # 3 points vertical offset
+              textcoords="offset points",
+              ha='center', va='bottom', rotation=90)
+            #ax.set_yticklabels(np.arange(y_min,y_max,(y_max-y_min)/10 ))
+        rects3=ax.bar(x+0.2,k.iloc[:,2],width,label='2020-21', color='red')
+        for p in rects3:
+            height = p.get_height()
+            ax.annotate('{}'.format(height),
+              xy=(p.get_x() + p.get_width() / 2, height),
+              xytext=(0, 3), # 3 points vertical offset
+              textcoords="offset points",
+              ha='center', va='bottom', rotation=90)
+            #ax.set_yticklabels(np.arange(y_min,y_max,(y_max-y_min)/10 ))
+        ax.legend(fontsize=16)
+        ax.set_title(i, fontsize=20)
+        ax.tick_params(labelsize=20)
         
-    #     ax.set_xticks(x)
+        ax.set_xticks(x)
         
-    #     ax.set_xticklabels(k.index, rotation=90)
-    #     ax.set_yticklabels(y_ticks_l)
-    #     plt.yticks(y_ticks_l)
-    #     plt.ylim(y_min,y_max)
-    #     plt.ylabel('{}'.format(i))
-    #     plt.tight_layout()
-    #     plt.savefig('./images/bar/bar_{}_{}.jpg'.format(i,k_str))
-    #     plt.close()
+        ax.set_xticklabels(k.index, rotation=90)
+        ax.set_yticklabels(y_ticks_l)
+        plt.yticks(y_ticks_l)
+        plt.ylim(y_min,y_max)
+        plt.ylabel('{}'.format(i))
+        plt.tight_layout()
+        plt.savefig('./images/bar/bar_{}_{}.jpg'.format(i,k_str))
+        plt.close()
