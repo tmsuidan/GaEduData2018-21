@@ -37,10 +37,19 @@ for i in plot_types:
                      '2020-21':df2020[i+'_2020-21']},\
                     )
         
+    
+    y_min=math.floor(np.min(df.iloc[:,1:].min())*.1)
+    
+    y_max=math.ceil(np.max(df.iloc[:,1:].max())*1.1)
+    y_max_sns=math.ceil(np.max(df.iloc[:,1:].max())*1.5)
+    steps=math.floor((y_max-y_min)/10)
+    if steps==0: steps=1
+    y_ticks_l=list(range(y_min,y_max,steps))
     test_df=df.melt(id_vars='District')
     
-    p1=sns.FacetGrid(data=test_df, col='District', col_wrap=15,  hue='variable').set_titles( fontsize=18)
+    p1=sns.FacetGrid(data=test_df, col='District', col_wrap=15,  hue='variable', ylim=(y_min,y_max_sns)).set_titles( fontsize=18)
     p1.map(sns.barplot, 'variable', 'value', order=test_df['variable'].unique()).add_legend()#, hue='variable')
+    
     for ax in p1.axes:
         for p in ax.patches:
                  ax.annotate("%.2f" % p.get_height(), (p.get_x() + p.get_width() / 2., p.get_height()),
@@ -52,12 +61,7 @@ for i in plot_types:
     
     p1.savefig('./images/bar/bar_{}.png'.format(i), dpi=300, bbox_inches='tight')
     p1.fig.clf()
-    # y_min=math.floor(np.min(df.iloc[:,1:].min())*.1)
     
-    # y_max=math.ceil(np.max(df.iloc[:,1:].max())*1.1)
-    # steps=math.floor((y_max-y_min)/10)
-    # if steps==0: steps=1
-    # y_ticks_l=list(range(y_min,y_max,steps))
     
     # width=0.15    
     # df1=df.iloc[0:30,:]
