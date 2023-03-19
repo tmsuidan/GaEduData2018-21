@@ -62,7 +62,7 @@ for dataset in [ '2018-19','2019-20','2020-21']:
 
     fig = px.choropleth(df, geojson=counties, locations='FIPS', color='Labels',
                         color_continuous_scale='Viridis',
-                        range_color=(0, 17),
+                        range_color=(0, 18),
                         scope='usa',
                         labels={'Labels': 'Overall'}
                         )
