@@ -45,7 +45,7 @@ for dataset in [ '2018-19','2019-20','2020-21']:
        
         features=df.values
         title_1='2018-19'
-        n_clust=17
+        n_clust=18
         
       
         
@@ -58,7 +58,7 @@ for dataset in [ '2018-19','2019-20','2020-21']:
        
         features=df.values
         title_1='2019-20' 
-        n_clust=17
+        n_clust=18
         
         
     if dataset=='2020-21':
@@ -70,7 +70,7 @@ for dataset in [ '2018-19','2019-20','2020-21']:
         
          features=df.values
          title_1='2020-21'
-         n_clust=17
+         n_clust=18
          
     
          
