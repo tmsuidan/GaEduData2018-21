@@ -8,14 +8,16 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import math
-
+from scipy.stats import linregress
 import numpy as np
 
 import os
 directory="./images/bar"
 if not os.path.exists(directory):
     os.makedirs(directory)
-
+directory="./csvs/rates"
+if not os.path.exists(directory):
+    os.makedirs(directory)
 df2018=pd.read_csv('./data/Master_2018-19.csv',index_col='SCHOOL_DSTRCT_NM')
 df2018=df2018.iloc[0:180,:]
 plot_types=list(df2018.columns)
@@ -30,14 +32,29 @@ df2020=df2020.iloc[0:180,:]
 
 
 
+
 for i in plot_types:
     df=pd.DataFrame({'District':df2018.index,\
                      '2018-19':df2018[i+'_2018-19'],\
                      '2019-20':df2019[i+'_2019-20'],\
                      '2020-21':df2020[i+'_2020-21']},\
                     )
-        
-    
+    rate_df=pd.DataFrame( index=df2018.index)    
+    rate_df['slope']=0.0 
+    rate_df['intercept']=0.0 
+    rate_df['r2']=0.0 
+    rate_df['p-value']=0.0 
+    rate_df['std error']=0.0 
+    for row in df.iterrows():
+        idx=row[0]
+        _,p0,p1,p2=row[1]
+        slope, intercept, r2, pv, se=linregress([0,1,2],[p0,p1,p2])
+        rate_df.loc[idx,'slope']=slope
+        rate_df.loc[idx,'intercept']=intercept
+        rate_df.loc[idx,'r2']=r2
+        rate_df.loc[idx,'p-value']=pv
+        rate_df.loc[idx,'std error']=se
+    rate_df.to_csv('./csvs/rates/{} rates.csv'.format(i))
     y_min=math.floor(np.min(df.iloc[:,1:].min())*.1)
     
     y_max=math.ceil(np.max(df.iloc[:,1:].max())*1.1)
@@ -52,9 +69,9 @@ for i in plot_types:
     
     for ax in p1.axes:
         for p in ax.patches:
-                 ax.annotate("%.2f" % p.get_height(), (p.get_x() + p.get_width() / 2., p.get_height()),
-                     ha='center', va='bottom', fontsize=11, color='black', xytext=(0, 3),
-                     textcoords='offset points', rotation=90)
+                  ax.annotate("%.2f" % p.get_height(), (p.get_x() + p.get_width() / 2., p.get_height()),
+                      ha='center', va='bottom', fontsize=11, color='black', xytext=(0, 3),
+                      textcoords='offset points', rotation=90)
     plt.rcParams['figure.figsize']=(30,24)
     p1.fig.subplots_adjust(top=0.9)
     p1.fig.suptitle('{}'.format(i), fontsize=20)
