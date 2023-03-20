@@ -85,13 +85,7 @@ for dataset in [ '2018-19','2019-20','2020-21']:
     
     
     
-    heatmap = sns.heatmap(df.iloc[:,2:-2].corr(), vmin=-1, vmax=1, annot=True,annot_kws={'size':6}, cmap='viridis')
     
-    plt.rcParams['figure.figsize']=(20,20)
-    heatmap.set_title('Correlation {}'.format(title_1), fontdict={'fontsize':12}, pad=12)
-    hm=heatmap.get_figure()
-    hm.savefig('./images/heatmap_{}.png'.format(title_1), dpi=300, bbox_inches='tight')
-    hm.clear()
     
     
     
