@@ -30,49 +30,49 @@ geopandas version 0.12.2
 
 Several revenue values are correlated and may be dropped if modeling is to be done. Cluster labeling simply categorizes like school systems.
 
-![Diagram Description automatically generated with low confidence](media/ec8d4c4b77a58a33d3d809b9b79d208d.png)
+![Graphical user interface Description automatically generated](media/b59331d26b41799e4c338071acb5ead0.png)
 
-![Diagram Description automatically generated with medium confidence](media/85dc2c2fa5f1973d1e00ffa2127c6d94.png)
+![Graphical user interface Description automatically generated with low confidence](media/e7a367b83b0dbfcbf1b63f84643a15b9.png)
 
-![A picture containing diagram Description automatically generated](media/28714d8baeef97cacd2c3629e22adf3b.png)
+![A picture containing graphical user interface Description automatically generated](media/92a8fc48041a95bb28bee875ec9574d9.png)
 
 **Overall county cluster labeling**
 
-The elbow was selected at 17 clusters for each school year. 10 could possibly have been chosen but there’s little difference in algorithm performance.
+The elbow was selected at 18 clusters for each school year. 10 could possibly have been chosen but there’s little difference in algorithm performance.
 
-![Chart, line chart Description automatically generated](media/037c1066efc95a5922f07681ec0a740d.png)
+![Chart, line chart Description automatically generated](media/288ccae9a41dad14b4cd501f10b45e54.png)
 
 2018-19
 
-![Chart, line chart Description automatically generated](media/1062c18ae19c80413347cccce70ccd3b.png)
+![Chart, line chart Description automatically generated](media/96656b6e207c1cd33a4933352dc749f9.png)
 
 2019-20
 
-![Chart, line chart Description automatically generated](media/92adc868915a015ebe2b152d2f0d777e.png)
+![Chart, line chart Description automatically generated](media/a42e07baccb6026122c8394440cfc163.png)
 
 2020-21
 
 **County Systems**
 
-![A picture containing text Description automatically generated](media/0136e4b0265083d6831f73971d257b8e.png)
+![A picture containing text Description automatically generated](media/6f928bd582f2be210af4edfc71aaabeb.png)
 
-![A picture containing text Description automatically generated](media/07ba03283c5c039a16011076c3e594c0.png)
+![A picture containing text Description automatically generated](media/902770d2ad4d33e0d802e529bb53b2b1.png)
 
-![A picture containing chart Description automatically generated](media/4e7b80b9e90a252ee8efb48eac59a96f.png)
+![A picture containing chart Description automatically generated](media/79b33a58675d46e92f0a834fcb2e4cae.png)
 
 The differences between counties were centered on primarily metro county areas in 2018-19 and decreased in 2019-20 which included the start of the pandemic. In 2020-21 as schools reopened changes increased primarily in southern Georgia.
 
 **City Systems**
 
-**![Map Description automatically generated](media/3cdbac090113f150e558344ae4fdeb3e.png)**
+![Map Description automatically generated](media/492b9333b282180d92f019b0b47d0417.png)
 
 2018-19
 
-![Map Description automatically generated](media/98692e48e3323641c2e95ff85f650cbc.png)
+![Map Description automatically generated](media/aba186fe69f246aa1b8c362b14e5c7e9.png)
 
 2019-20
 
-![Map Description automatically generated](media/df7134824f97257fd702816bef55d1af.png)
+![Map Description automatically generated](media/e6200230de91869d60aba76fbd872f21.png)
 
 2020-21
 
@@ -84,11 +84,11 @@ The differences between counties were centered on primarily metro county areas i
 
 **County Systems**
 
-**![Chart Description automatically generated](media/369740ec8f7fecf62ba240adb785d8a7.png)**
+![Chart Description automatically generated](media/daa868eaef15d60cea113b0a7a68eb76.png)
 
-**![Chart Description automatically generated](media/54c794af4375f4e47a77c67937fd3c19.png)**
+![Chart Description automatically generated](media/54c794af4375f4e47a77c67937fd3c19.png)
 
-**![Chart Description automatically generated](media/54bdd56beab223555a6e387f330a8166.png)**
+![Chart Description automatically generated](media/54bdd56beab223555a6e387f330a8166.png)
 
 **City Systems**
 
@@ -110,4 +110,8 @@ After 2018-19, city SAT combined scores became more homogenous – specifically 
 
 Overall Bar Charts of the categories used that show changes over the 3 years of data used. These plots may also be viewed in larger form at <https://github.com/tmsuidan/GaEduData2018-21/tree/main/images/bar>
 
-![](media/b2b3dc1341755dd9621712b740e456ef.png)![](media/c544cff24640cfc57caa4bf7a54ec2aa.png)![](media/bc37cc33b5ba7a8540d481fc42c30ebe.png)![](media/d611486a6b40ed1e2f7f847e447de70a.png)![](media/4a2f7484ad2bbd75862b17d623b5083d.png)![](media/5221e3551b9b7c47b08062b6add150e2.png)![](media/7f7628eb4cb360a5528288f885f9f5b8.png)![](media/f70ff4c2956b19d324d5d323f4be724a.png)![](media/dd373ea7bb04aebf6714868749b6d7ee.png)![](media/1972b8b7557f2642dc3196a2236e8775.png)![](media/ed68cc2d3a0f22373ab11bb34182c8fa.png)![](media/a9627ab38d3b01a6377bf2a1e3029dbf.png)![](media/f1146fb0ccfdb6b8817b7ccef415e6e1.png)![](media/731d5ceb2eeb06ce3bb420c632c5f668.png)![](media/66bfccc31c5f76ad4c1144b3c3e960b9.png)![](media/8d031dd0e9e8c7e1e9a6ea6fa2542d2e.png)![](media/701f3341786099af7d7af3e7f0c08475.png)![](media/b07f1b2db426b09c74395a2ec862520c.png)![](media/bd974c24383bccd992a5a75d7f90c350.png)![](media/aa7c5a0b5df9ad070a32bf2bf862455d.png)![](media/29d6b007cb4fd86f1e5900da2048d0cb.png)![](media/7a304481d375438eb4dbaa47963dd69b.png)![](media/aa9d69450745c20672ee907a5a0db210.png)![](media/d85c18c3e76cbf350ce9d7c081d9419c.png)![](media/c6ae8941a2cfec47996ecbb0d565fc67.png)![](media/02ee5f00b0bf346f87c07ec9c1e1e651.png)![](media/5bf7e5122212f2840bac0d32b65e30ef.png)![Chart Description automatically generated](media/b1054d51c05cb34100da21cb1e658240.png)![Chart Description automatically generated](media/a18e3951de893d6d050d1bc0e2342921.png)![A screenshot of a computer Description automatically generated with low confidence](media/ee1943da289163635f9aab30173c7ec9.png)![Chart Description automatically generated with medium confidence](media/3f96ce9f251f3a42444f1b7b4ac9215e.png)![A picture containing building Description automatically generated](media/b16322e534851013ea196e73263ff4f6.png)![Chart Description automatically generated](media/3390da307dc7053581ebf4d6a04f7bfe.png)![Chart, calendar Description automatically generated](media/db43cbee50d3d6f794301420456661a3.png)![Chart Description automatically generated with medium confidence](media/86a5ec0399b899e6193d16bc646dd4ed.png)![Chart Description automatically generated](media/fda850535f047a9e2d8933c2ec0040d2.png)![Chart, treemap chart Description automatically generated](media/9df568b7e3bef9d8acbc6e1ad84a2826.png)![Chart Description automatically generated with medium confidence](media/26155744b9c968ee0943ed9de4524c01.png)![A picture containing timeline Description automatically generated](media/b9f29501dd6298afb4ec609342a7c459.png)![Timeline Description automatically generated](media/97bd91dc567890f6f5f37bee999c99f9.png)![Chart Description automatically generated with medium confidence](media/63938688b670e907e4ee0b7bc0b2507d.png)![A picture containing chart Description automatically generated](media/1b15eedadb21b8511900c2b745931ec2.png)![Chart, timeline, bar chart Description automatically generated](media/efd0a83ec831553347f10be96982d4da.png)![A picture containing chart Description automatically generated](media/34894933d817daa9e541517bfecd8876.png)![Chart, treemap chart Description automatically generated](media/6d110d7a3d158805dcdc585498eac071.png)![Chart, timeline, bar chart, box and whisker chart Description automatically generated](media/a0e62241d7f302f6718861a86c97a163.png)![Chart Description automatically generated](media/b1d3636182e202d3b3b8ec3aa63cf076.png)![Chart, timeline, bar chart Description automatically generated](media/f40ddf7ff832fd7e8af340b18f5958a0.png)
+Linear regression equations and r2 values are available here:
+
+<https://github.com/tmsuidan/GaEduData2018-21/tree/main/images/rates>
+
+![](media/353a82f19da259c4c914f9dba73dc807.png)![](media/ac0fa3825c3850ce96f8c0a76cc603ae.png)![](media/906f4160e10099b7e4c98a26136b47ca.png)![](media/ae2218d0e3261105edb40399d29642f8.png)![](media/55e8893e9559f41011dc654cdc29787f.png)![](media/8390aeb38b07035cb6319db5c3d9a89c.png)![](media/6a9cea6e09a734ac4fcc83368469afab.png)![](media/6e16a414064925f4c03b071040284741.png)![](media/3605b9edf3e68e50499fde406739007e.png)![](media/44e145e5401490b6a66a562ced503a84.png)![](media/6dc771273d26fb6211c32ee027050888.png)![](media/8fdabf2b668fb28ca607503426facac4.png)![](media/06b7652ba911be47755feb23002d4054.png)![](media/b3909bf917e596367b75e76e706287f7.png)![](media/1238fabe1147f8571335536ecf35b088.png)![](media/86d7c2444eb73ab6d38164cdf932d73f.png)![](media/8782a244cae5fef7974ca70dc4a22ae4.png)![](media/b42522ee2c08dec894275ee949a46861.png)![](media/736e47034b595b41a4c8fe5ba7379dc1.png)![](media/4864a5f43c7455052093c421e41b9a4f.png)![](media/9a8ee16b5477710396713586957b343d.png)![](media/3f111af3c452c0a8cc373b64b21e14e2.png)![](media/c5718203540a9fe6ba3458683fd151a2.png)![](media/d93d546e32f34b17e99425552c893dbb.png)![](media/6c71fb9d4028c4ca78d9649d3b124021.png)![](media/e9dafbf68a9cf9add17173a9b29f15ac.png)![](media/707d1c668d576378943476a73fb2f7c4.png)![](media/3083d74f486a6b76f7e46dca296dfaeb.png)![](media/ffa0f6a1da5a0eda035b5beb8556ddde.png)![](media/608a8eb9c1ee43c39e464ebdcb4261dc.png)![](media/bb534aede06b8b0945553d525d5d7642.png)![](media/cc713a0981871cf87636511b073b5e38.png)![A picture containing calendar Description automatically generated](media/d3561075e23065519062c8f75f28ce24.png)![](media/fc846f804ca353245b3794f4046a13a9.png)![A picture containing timeline Description automatically generated](media/9fb86e4d02aa8452a8d6de0ec732b2d5.png)![](media/d87406416815ba229ea8f3f4ebadf790.png)![A picture containing chart Description automatically generated](media/e5d3eccf599ffceae6518cc67e30c46f.png)![Chart, timeline, bar chart Description automatically generated](media/e6c8e181c62b7a404de63b4a2eb1f229.png)![Chart Description automatically generated](media/b0b5a992addb6db6d4f9ed5301cc26b2.png)![Chart Description automatically generated with medium confidence](media/288ec5fa3e2d4bd05d63440b45b3ddfd.png)![Chart, bar chart, box and whisker chart Description automatically generated](media/d7e6430e635b52a1bc9024c9e8b2f369.png)![A picture containing treemap chart Description automatically generated](media/2e261683c9c6f616a56bc587d078d4c6.png)![Chart, timeline Description automatically generated](media/6867459df8700f7af7e965b8650157d2.png)![Table Description automatically generated](media/102164cfff0cbc8072bbc6998e4d6356.png)![Table Description automatically generated](media/571ad85f7ff51d7627fe68aa1dc5cadd.png)![Chart Description automatically generated](media/5a09192fe94c29cb253c4c88ce0beca0.png)![Calendar Description automatically generated with medium confidence](media/fd62be3fbef0137a5455def5d5fc7819.png)![A picture containing chart Description automatically generated](media/ef9e1935f98c59f3d268a15fa969898d.png)
