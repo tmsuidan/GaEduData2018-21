@@ -28,16 +28,16 @@ if not os.path.exists(directory):
 
 df2018=pd.read_csv('./data/Master_2018-19.csv',index_col='SCHOOL_DSTRCT_NM')
 df2018=df2018.iloc[0:180,1:]
-df2018.name=' 2018-19'
+
 
 plot_types=list(df2018.columns)
-plot_types=plot_types[1:]
+
 df2019=pd.read_csv('./data/Master_2019-20.csv',index_col='SCHOOL_DSTRCT_NM')
 df2019=df2019.iloc[0:180,1:]
-df2019.name=' 2019-20'
+
 df2020=pd.read_csv('./data/Master_2020-21.csv',index_col='SCHOOL_DSTRCT_NM')
 df2020=df2020.iloc[0:180,1:]
-df2020.name=' 2020-21'
+
 
 df_dict={'2018-19':df2018, '2019-20':df2019, '2020-21': df2020}
 
