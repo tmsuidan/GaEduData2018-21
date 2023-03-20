@@ -82,16 +82,6 @@ for dataset in [ '2018-19','2019-20','2020-21']:
                       title={'text': '{} School Year'.format(title_1),  'y':0.9, 'x':0.5,'xanchor': 'center','yanchor': 'top' })
     fig.write_image('./images/Chloropeth_{}_SAT.png'.format(title_1))
     
-    # fig = px.choropleth(df, geojson=counties, locations='FIPS', color='{}_Instruction_y'.format(title_1),
-    #                     color_continuous_scale='Viridis',
-    #                     range_color=(0, 30),
-    #                     scope='usa',
-    #                     labels={'Labels': 'Instruction Expenditures'}
-    #                     )
-    # fig.update_geos(fitbounds='locations', visible=False)
-    # fig.update_layout(margin={'r': 0, 't': 0, 'l': 0, 'b': 0},
-    #                   title={'text': '{} School Year'.format(title_1),  'y':0.9, 'x':0.5,'xanchor': 'center','yanchor': 'top' })
-    # fig.write_image('./images/Chloropeth_{}_InstructionExp.png'.format(title_1))
     
     
     
