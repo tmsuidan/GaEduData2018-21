@@ -90,20 +90,21 @@ for i in plot_types:
     p1.savefig('./images/bar/bar_{}.png'.format(i), dpi=300, bbox_inches='tight')
     p1.fig.clf()
     
-    p1=sns.relplot(kind='line',data=test_df, x='variable', y='value',col='District', col_wrap=15, linewidth=10).set_titles( fontsize=18)
+    p2=sns.relplot(kind='line',data=test_df, x='variable', y='value',col='District', col_wrap=15, linewidth=10).set_titles( fontsize=18)
     
-    axes=p1.axes.flatten()
+    axes=p2.axes.flatten()
     
     for j, ax in enumerate(axes):
         ax.text(0,3, 'y={:0.3f}*year +{:0.3f} \nr2={:0.3f}'.format(rate_df.iloc[j,0], rate_df.iloc[j,1], rate_df.iloc[j,2]))
         
             
     plt.rcParams['figure.figsize']=(30,24)
-    p1.fig.subplots_adjust(top=0.9)
-    p1.fig.suptitle('{}'.format(i), fontsize=20)
+    p2.fig.subplots_adjust(top=0.9)
+    p2.fig.suptitle('{}'.format(i), fontsize=20)
     
-    p1.savefig('./images/rates/line_{}.png'.format(i),  bbox_inches='tight')
-    p1.fig.clf()
+    p2.savefig('./images/rates/line_{}.png'.format(i),  bbox_inches='tight')
+    p2.fig.clf()
+    plt.close()
     
     
     
