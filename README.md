@@ -54,25 +54,25 @@ The elbow was selected at 18 clusters for each school year. 10 could possibly ha
 
 **County Systems**
 
-![A picture containing text Description automatically generated](media/6f928bd582f2be210af4edfc71aaabeb.png)
+![](media/2b2f14b89ab258fc0106903e95c1df44.png)
 
-![A picture containing text Description automatically generated](media/902770d2ad4d33e0d802e529bb53b2b1.png)
+![](media/c2ecb2184d191b0ac7d010582d032780.png)
 
-![A picture containing chart Description automatically generated](media/79b33a58675d46e92f0a834fcb2e4cae.png)
+![A picture containing text Description automatically generated](media/b19f56a97bf5fdbabc5955b4d52ff7f0.png)
 
 The differences between counties were centered on primarily metro county areas in 2018-19 and decreased in 2019-20 which included the start of the pandemic. In 2020-21 as schools reopened changes increased primarily in southern Georgia.
 
 **City Systems**
 
-![Map Description automatically generated](media/492b9333b282180d92f019b0b47d0417.png)
+![Map Description automatically generated](media/64dcc1eedb37e0d51c9ea5ff05f74076.png)
 
 2018-19
 
-![Map Description automatically generated](media/aba186fe69f246aa1b8c362b14e5c7e9.png)
+![Map Description automatically generated](media/8484ec1dd3bc3259c53cbc584e1ffcac.png)
 
 2019-20
 
-![Map Description automatically generated](media/e6200230de91869d60aba76fbd872f21.png)
+![Map Description automatically generated](media/64efc2593e20848d35e950539f4dcbbd.png)
 
 2020-21
 
@@ -84,23 +84,23 @@ The differences between counties were centered on primarily metro county areas i
 
 **County Systems**
 
-![Chart Description automatically generated](media/daa868eaef15d60cea113b0a7a68eb76.png)
+![Chart Description automatically generated](media/c7b441b927e9cfc41aa1a9a3289a6222.png)
 
-![Chart Description automatically generated](media/54c794af4375f4e47a77c67937fd3c19.png)
+![Chart Description automatically generated](media/9c28d748cd03a5af881a7742356c5ccc.png)
 
-![Chart Description automatically generated](media/54bdd56beab223555a6e387f330a8166.png)
+![Chart Description automatically generated](media/8b1521f266be3bac3ff4d1f1938f2c33.png)
 
 **City Systems**
 
-![Map Description automatically generated](media/b52aa937e5890c70f5144b57d81bc93d.png)
+![Map Description automatically generated](media/42cd9852644e838ae97bfcec67412fec.png)
 
 2018-19
 
-![Map Description automatically generated](media/01f15168ee1f9b3e3eacfd2f9d93db2a.png)
+![Map Description automatically generated](media/8ca0c80ccd71f4da05890a42b1a75a6d.png)
 
 2019-20
 
-![Map Description automatically generated](media/7bc6ff07a76c4fdd5155d7f5f8a62f11.png)
+![Map Description automatically generated](media/e30e6eb42e0ef8e27300d52108462a09.png)
 
 After 2018-19, city SAT combined scores became more homogenous – specifically increasing in many systems.
 
