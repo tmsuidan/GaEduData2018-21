@@ -94,7 +94,7 @@ for dataset in [ '2018-19','2019-20','2020-21']:
     
     if dataset=='2018-19':
         
-        df = pd.read_csv('./data/Master_2018-19.csv')
+        df = pd.read_csv('./data/Master_2018-19 after _select.csv')
         
         df.replace('TFS',0,inplace=True)
         df.replace(np.nan,0,inplace=True)
@@ -119,7 +119,7 @@ for dataset in [ '2018-19','2019-20','2020-21']:
         
     if dataset=='2019-20':
         
-        df = pd.read_csv('./data/Master_2019-20.csv')
+        df = pd.read_csv('./data/Master_2019-20 after _select.csv')
         df.replace('TFS',0,inplace=True)
         df.replace(np.nan,0,inplace=True)
         
@@ -132,7 +132,7 @@ for dataset in [ '2018-19','2019-20','2020-21']:
         
     if dataset=='2020-21':
          
-          df = pd.read_csv('./data/Master_2020-21.csv')
+          df = pd.read_csv('./data/Master_2020-21 after _select.csv')
           df.replace('TFS',0,inplace=True)
           df.replace(np.nan,0,inplace=True)
           
