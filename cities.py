@@ -54,7 +54,7 @@ for dataset in [ '2018-19','2019-20','2020-21']:
     fig = px.scatter_mapbox(df, lat='Latitude', lon='Longitude', 
                         color="SAT Combined Score",
                         size="STUDENT_COUNT_ALL_Attendance", color_continuous_scale=px.colors.sequential.Viridis, size_max=40,
-                        zoom=5, height=1000, mapbox_style="open-street-map")
+                        zoom=5, height=1000, range_color=[700,1600],mapbox_style="open-street-map")
     fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
     
     
